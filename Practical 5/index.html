@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Portal</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Student Profiles</h1>
+  <div id="student-list"></div>
+  <div id="pagination"></div>
+
+  <h2>Event List</h2>
+  <ul id="event-list"></ul>
+
+  <h2>Location Selector</h2>
+  <select id="country"></select>
+  <select id="state"></select>
+
+  <h2>Custom CAPTCHA</h2>
+  <canvas id="captchaCanvas" width="200" height="50"></canvas>
+  <input type="text" id="captchaInput" placeholder="Enter CAPTCHA" />
+  <button onclick="validateCaptcha()">Submit</button>
+
+  <!-- Load scripts in correct order -->
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
