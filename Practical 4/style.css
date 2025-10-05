@@ -1,0 +1,173 @@
+/* ====== Base Reset ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  background-color: #f4f6f9;
+  color: #333;
+  line-height: 1.6;
+  padding: 2rem;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* ====== Header ====== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right, #4e54c8, #8f94fb);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+header h1 {
+  font-size: 1.8rem;
+}
+
+#themeToggle {
+  background: white;
+  color: #4e54c8;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+#themeToggle:hover {
+  background: #e0e0e0;
+}
+
+/* ====== Notification Banner ====== */
+#notificationBanner {
+  background-color: #ffecb3;
+  color: #333;
+  padding: 1rem;
+  margin: 1rem 0;
+  text-align: center;
+  border-radius: 6px;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* ====== FAQ Section ====== */
+.faq-section h2 {
+  margin-bottom: 1rem;
+  color: #4e54c8;
+}
+
+.faq-item {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.faq-item:hover {
+  background-color: #f0f0ff;
+}
+
+.faq-answer {
+  margin-top: 0.5rem;
+  display: none;
+  color: #555;
+}
+
+/* ====== Slider Section ====== */
+.slider-section h2 {
+  margin: 2rem 0 1rem;
+  color: #4e54c8;
+}
+
+.slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  padding-bottom: 1rem;
+}
+
+.slider-card {
+  min-width: 250px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 1rem;
+  transition: transform 0.3s;
+}
+
+.slider-card:hover {
+  transform: scale(1.05);
+}
+
+.slider-card img {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+}
+
+/* ====== Popup ====== */
+.popup {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  z-index: 1000;
+  width: 300px;
+  text-align: center;
+}
+
+.popup button {
+  margin-top: 1rem;
+  background-color: #4e54c8;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.popup button:hover {
+  background-color: #3b42a1;
+}
+
+.hidden {
+  display: none;
+}
+
+/* ====== Dark Theme ====== */
+body.dark {
+  background-color: #1e1e2f;
+  color: #f0f0f0;
+}
+
+body.dark header {
+  background: linear-gradient(to right, #232526, #414345);
+}
+
+body.dark .faq-item {
+  background-color: #2c2c3c;
+  color: #f0f0f0;
+}
+
+body.dark .slider-card {
+  background-color: #2c2c3c;
+}
+
+body.dark .popup {
+  background-color: #2c2c3c;
+  color: #f0f0f0;
+}
