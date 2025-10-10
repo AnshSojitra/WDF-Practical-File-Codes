@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Game Fusion - Game Collection</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<style>
+
+body {
+  background: #0f172a;
+  color: #f1f5f9;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #94a3b8;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: #22d3ee;
+}
+
+header {
+  background: #111827;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo .title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: white;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  color: #22d3ee;
+}
+
+.menu {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.menu a.active {
+  color: #22d3ee;
+  font-weight: 600;
+}
+
+.btn {
+  background: #0891b2;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.btn:hover {
+  background: #0e7490;
+}
+
+.mobile-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #94a3b8;
+}
+
+.menu-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: #1f2937;
+  padding: 1rem;
+}
+
+.mobile-menu a {
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.mobile-menu a:hover {
+  background: #374151;
+}
+
+.hidden {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .desktop-menu {
+    display: none;
+  }
+  .mobile-btn {
+    display: block;
+  }
+  .mobile-menu {
+    display: flex;
+  }
+}
+
+/* Sections */
+main {
+  max-width: 1200px;
+  margin-left: 0px;
+  margin-right: 0px;
+  padding: 2rem;
+}
+
+section h2, section h1 {
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+#trending {
+  margin: 3rem 0;
+}
+
+.scroll-container {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+}
+
+.scroll-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 8px;
+}
+
+/* Game Cards */
+.game-card {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  min-width: 280px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+.game-card img {
+  width: 100%;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.game-card h3 {
+  color: white;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.game-card p {
+  color: #9ca3af;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #22d3ee;
+}
+
+/* Grid Collection */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* Footer */
+footer {
+  background: #111827;
+  text-align: center;
+  padding: 2rem;
+  color: #9ca3af;
+  margin-top: 3rem;
+}
+
+    </style>
+<body>
+  <!-- Header -->
+  <header>
+    <nav>
+      <div class="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM6.25 10a.75.75 0 01.75-.75h.25a.75.75 0 010 1.5h-.25a.75.75 0 01-.75-.75zm6.5 0a.75.75 0 01.75-.75h.25a.75.75 0 010 1.5h-.25a.75.75 0 01-.75-.75zM10 12a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
+          <path fill-rule="evenodd" d="M4 10.75a.75.75 0 011.5 0v2.5a.75.75 0 01-1.5 0v-2.5zm10 0a.75.75 0 011.5 0v2.5a.75.75 0 01-1.5 0v-2.5zM10 16.5a.75.75 0 01.75-.75h.5a.75.75 0 010 1.5h-.5a.75.75 0 01-.75-.75z" clip-rule="evenodd" />
+          <path fill-rule="evenodd" d="M14.5 13.5a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
+        </svg>
+        <span class="title">Game Fusion</span>
+      </div>
+      <div class="menu desktop-menu">
+        <a href="home.html">Home</a>
+        <a href="collection.html" class="active">Game Collection</a>
+        <a href="home.html#about">About</a>
+        <a href="home.html#contact">Contact</a>
+          <a href="Event.html">Event_List</a>
+        <a href="login.html" class="btn">Login / Sign Up</a>
+      </div>
+      <button id="mobile-menu-button" class="mobile-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" class="menu-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </nav>
+  
+    <div id="mobile-menu" class="mobile-menu hidden">
+      <a href="home.html">Home</a>
+      <a href="collection.html" class="active">Game Collection</a>
+      <a href="home.html#about">About</a>
+      <a href="home.html#contact">Contact</a>
+        <a href="Event.html">Event_List</a>
+      <a href="login.html">Login / Sign Up</a>
+    </div>
+  </header>
+
+  <main>
+ 
+    <section id="trending">
+      <h2>Trending Games</h2>
+      <div class="scroll-container">
+        <div class="game-card">
+          <img src="1cod.jpg" alt="">
+          <h3>CALL OF DUTY</h3>
+          <p>An epic fantasy RPG where you explore a shattered world and claim the Elden Crown.</p>
+          <div class="card-footer">
+            <span class="price">Free</span>
+            <a href="#" class="btn">Play Now</a>
+          </div>
+        </div>
+
+        <div class="game-card">
+          <img src="2FF.jpg" alt="">
+          <h3>FREE FIRE</h3>
+          <p>A high-speed racing game set in a futuristic city, with stunning neon visuals.</p>
+          <div class="card-footer">
+            <span class="price">Free</span>
+            <a href="#" class="btn">Play Now</a>
+          </div>
+        </div>
+
+        <div class="game-card">
+          <img src="3BGMI.jpg" alt="">
+          <h3>BGMI</h3>
+          <p>An epic fantasy RPG where you explore a shattered world and claim the Elden Crown.</p>
+          <div class="card-footer">
+            <span class="price">Free</span>
+            <a href="#" class="btn">Play Now</a>
+          </div>
+        </div>
+        
+        <div class="game-card">
+          <img src="4MINE CRAFT.jpg" alt="">
+          <h3>MINE CRAFT</h3>
+          <p>A high-speed racing game set in a futuristic city, with stunning neon visuals.</p>
+          <div class="card-footer">
+            <span class="price">Free</span>
+            <a href="#" class="btn">Play Now</a>
+          </div>
+        </div>
+
+        <div class="game-card">
+          <img src="5PUBG.jpg" alt="">
+          <h3>PUBG</h3>
+          <p>An epic fantasy RPG where you explore a shattered world and claim the Elden Crown.</p>
+          <div class="card-footer">
+            <span class="price">Free</span>
+            <a href="#" class="btn">Play Now</a>
+          </div>
+        </div>
+
+        <div class="game-card">
+          <img src="6World of Warcraft.jpeg" alt="">
+          <h3>WORLD OF WARCRAFT</h3>
+          <p>An epic fantasy RPG where you explore a shattered world and claim the Elden Crown.</p>
+          <div class="card-footer">
+            <span class="price">Free</span>
+            <a href="#" class="btn">Play Now</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <section id="game-collection">
+      <h1>All Games</h1>
+      <div class="grid">
+        <div class="game-card">
+          <img src="7Cyberpunk.jpg" alt="">
+          <h3>CYBER PUNK</h3>
+          <p>An immersive cyberpunk adventure with a branching narrative and intense combat.</p>
+          <div class="card-footer">
+            <span class="price">Free</span>
+            <a href="#" class="btn">Play Now</a>
+          </div>
+        </div>
+
+        <div class="game-card">
+          <img src="8Baldur's Gate 3.jpg" alt="">
+          <h3>BALDUR'S GATE 3</h3>
+          <p>A classic fantasy RPG with turn-based battles and a vast open world to explore.</p>
+          <div class="card-footer">
+            <span class="price">Free</span>
+            <a href="#" class="btn">Play Now</a>
+          </div>
+        </div>
+
+         <div class="game-card">
+          <img src="9The Witcher 3.jpg" alt="">
+          <h3>THE WITCHER 3</h3>
+          <p>An immersive cyberpunk adventure with a branching narrative and intense combat.</p>
+          <div class="card-footer">
+            <span class="price">Free</span>
+            <a href="#" class="btn">Play Now</a>
+          </div>
+        </div>
+        
+        <div class="game-card">
+          <img src="10vice city.jpg" alt="">
+          <h3>GRAND THERF AUTO</h3>
+          <p>A classic fantasy RPG with turn-based battles and a vast open world to explore.</p>
+          <div class="card-footer">
+            <span class="price">Free</span>
+            <a href="#" class="btn">Play Now</a>
+          </div>
+        </div>
+
+         <div class="game-card">
+          <img src="11Alan Wake 2.jpg" alt="">
+          <h3>ALAN WAKE 2</h3>
+          <p>An immersive cyberpunk adventure with a branching narrative and intense combat.</p>
+          <div class="card-footer">
+            <span class="price">Free</span>
+            <a href="#" class="btn">Play Now</a>
+          </div>
+        </div>
+        
+        <div class="game-card">
+          <img src="12GOD OF WAR.jpg" alt="">
+          <h3>GOD OF WAR</h3>
+          <p>A classic fantasy RPG with turn-based battles and a vast open world to explore.</p>
+          <div class="card-footer">
+            <span class="price">Free</span>
+            <a href="#" class="btn">Play Now</a>
+          </div>
+        </div>
+
+         <div class="game-card">
+          <img src="13clash of Empires.jpg" alt="">
+          <h3>CLASH OF EMPIRES</h3>
+          <p>An immersive cyberpunk adventure with a branching narrative and intense combat.</p>
+          <div class="card-footer">
+            <span class="price">Free</span>
+            <a href="#" class="btn">Play Now</a>
+          </div>
+        </div>
+        
+        <div class="game-card">
+          <img src="14Hitman 3.png" alt="">
+          <h3>HITMAN 3</h3>
+          <p>A classic fantasy RPG with turn-based battles and a vast open world to explore.</p>
+          <div class="card-footer">
+            <span class="price">Free</span>
+            <a href="#" class="btn">Play Now</a>
+          </div>
+        </div>
+
+       <div class="game-card">
+          <img src="15ELDERSCROLL.jpg" alt="">
+          <h3>ELDER SCROLL</h3>
+          <p>A classic fantasy RPG with turn-based battles and a vast open world to explore.</p>
+          <div class="card-footer">
+            <span class="price">Free</span>
+            <a href="#" class="btn">Play Now</a>
+          </div>
+        </div>
+
+       <div class="game-card">
+          <img src="16NieRAUTOMATA.jpg" alt="">
+          <h3>NieR : AUTOMATA</h3>
+          <p>A classic fantasy RPG with turn-based battles and a vast open world to explore.</p>
+          <div class="card-footer">
+            <span class="price">Free</span>
+            <a href="#" class="btn">Play Now</a>
+          </div>
+        </div>
+
+         <div class="game-card">
+          <img src="17RED DEAD REDEMPTION 2.jpg" alt="">
+          <h3>RED DEAD REDEMPTION 2</h3>
+          <p>A classic fantasy RPG with turn-based battles and a vast open world to explore.</p>
+          <div class="card-footer">
+            <span class="price">Free</span>
+            <a href="#" class="btn">Play Now</a>
+          </div>
+        </div>
+
+        <div class="game-card">
+          <img src="18THE ELDER SCROLL 5.jpg" alt="">
+          <h3>THE ELDEN SCROLL 5</h3>
+          <p>A classic fantasy RPG with turn-based battles and a vast open world to explore.</p>
+          <div class="card-footer">
+            <span class="price">Free</span>
+            <a href="#" class="btn">Play Now</a>
+          </div>
+        </div>
+
+        <div class="game-card">
+          <img src="19GHOST OF TSUSHIMA.jpg" alt="">
+          <h3>GHOST OF TSUSHIMA</h3>
+          <p>A classic fantasy RPG with turn-based battles and a vast open world to explore.</p>
+          <div class="card-footer">
+            <span class="price">Free</span>
+            <a href="#" class="btn">Play Now</a>
+          </div>
+        </div>
+
+        <div class="game-card">
+          <img src="20BLACK MYTH WUKONG.jpg" alt="">
+          <h3>BLACK MYTH : WUKONG</h3>
+          <p>A classic fantasy RPG with turn-based battles and a vast open world to explore.</p>
+          <div class="card-footer">
+            <span class="price">Free</span>
+            <a href="#" class="btn">Play Now</a>
+          </div>
+        </div>
+
+        <div class="game-card">
+          <img src="21ASSASSIN'S CREED VALHALLA.jpg" alt="">
+          <h3>ASSASSIN'S CREED VALHALLA</h3>
+          <p>A classic fantasy RPG with turn-based battles and a vast open world to explore.</p>
+          <div class="card-footer">
+            <span class="price">Free</span>
+            <a href="#" class="btn">Play Now</a>
+          </div>
+        </div>
+
+        <div class="game-card">
+          <img src="22MASS EFFECT.jpg" alt="">
+          <h3>MASS EFFECT</h3>
+          <p>A classic fantasy RPG with turn-based battles and a vast open world to explore.</p>
+          <div class="card-footer">
+            <span class="price">Free</span>
+            <a href="#" class="btn">Play Now</a>
+          </div>
+        </div>
+
+        <div class="game-card">
+          <img src="23SPLIT FICTION.jpeg" alt="">
+          <h3>SPLIT FICTION</h3>
+          <p>A classic fantasy RPG with turn-based battles and a vast open world to explore.</p>
+          <div class="card-footer">
+            <span class="price">Free</span>
+            <a href="#" class="btn">Play Now</a>
+          </div>
+        </div>
+
+        <div class="game-card">
+          <img src="24AMONG US.png" alt="">
+          <h3>AMOUNG US</h3>
+          <p>A classic fantasy RPG with turn-based battles and a vast open world to explore.</p>
+          <div class="card-footer">
+            <span class="price">Free</span>
+            <a href="#" class="btn">Play Now</a>
+          </div>
+        </div>
+
+        <div class="game-card">
+          <img src="25DEAD ISLAND 2.jpg" alt="">
+          <h3>DEAD ISLAND 2</h3>
+          <p>A classic fantasy RPG with turn-based battles and a vast open world to explore.</p>
+          <div class="card-footer">
+            <span class="price">Free</span>
+            <a href="#" class="btn">Play Now</a>
+          </div>
+        </div>
+
+        <div class="game-card">
+          <img src="26HOGWARTS LEGACY.jpg" alt="">
+          <h3>26HOGWARTS LEGACY</h3>
+          <p>A classic fantasy RPG with turn-based battles and a vast open world to explore.</p>
+          <div class="card-footer">
+            <span class="price">Free</span>
+            <a href="#" class="btn">Play Now</a>
+          </div>
+        </div>
+
+        <div class="game-card">
+          <img src="27DYING LIGHT 2.jpg" alt="">
+          <h3>DYING LIGHT 2</h3>
+          <p>A classic fantasy RPG with turn-based battles and a vast open world to explore.</p>
+          <div class="card-footer">
+            <span class="price">Free</span>
+            <a href="#" class="btn">Play Now</a>
+          </div>
+        </div>
+
+        <div class="game-card">
+          <img src="28ELDEN RING.jpg" alt="">
+          <h3>ELDEN RING</h3>
+          <p>A classic fantasy RPG with turn-based battles and a vast open world to explore.</p>
+          <div class="card-footer">
+            <span class="price">Free</span>
+            <a href="#" class="btn">Play Now</a>
+          </div>
+        </div>
+
+        <div class="game-card">
+          <img src="29AGE OF EMPIRES.jpg" alt="">
+          <h3>AGE OF EMPIRES</h3>
+          <p>A classic fantasy RPG with turn-based battles and a vast open world to explore.</p>
+          <div class="card-footer">
+            <span class="price">Free</span>
+            <a href="#" class="btn">Play Now</a>
+          </div>
+        </div>
+
+        <div class="game-card">
+          <img src="30CITIES SHYLINES 2.jpg" alt="">
+          <h3>CITIES SKYLINES 2</h3>
+          <p>A classic fantasy RPG with turn-based battles and a vast open world to explore.</p>
+          <div class="card-footer">
+            <span class="price">Free</span>
+            <a href="#" class="btn">Play Now</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Game Fusion. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>

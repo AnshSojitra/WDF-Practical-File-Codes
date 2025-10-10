@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback - Game Fusion</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Inter", sans-serif;
+    }
+
+    body {
+      background: #0f172a;
+      color: #f1f5f9;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 600px;
+      margin: 2rem auto;
+    }
+ 
+
+     .container{
+      background: #111827;
+      padding: 2rem;
+      text-align: center;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(237, 231, 231, 0.2);
+      margin-bottom: 2rem;
+    }
+
+     .container h1 {
+      font-size: 2rem;
+      color: #22d3ee;
+      margin-bottom: 0.5rem;
+    }
+
+     .container p {
+      color: #94a3b8;
+    }
+
+    form {
+      background: #111827;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(237, 231, 231, 0.2);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      border: 1px solid #334155;
+      background: #1e293b;
+      color: white;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    textarea:focus {
+      outline: 2px solid #22d3ee;
+    }
+
+    button {
+      background: #0891b2;
+      color: white;
+      padding: 0.75rem 2rem;
+      border-radius: 99px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    button:hover {
+      background: #0e7490;
+      transform: scale(1.05);
+    }
+
+    /* Star rating */
+    .stars {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+      margin-bottom: 1rem;
+    }
+
+    .stars input[type="radio"] {
+      display: none;
+    }
+
+    .stars label {
+      font-size: 30px;
+      color: #ccc;
+      padding: 0 5px;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .stars input[type="radio"]:checked ~ label,
+    .stars label:hover,
+    .stars label:hover ~ label {
+      color: #FFD700;
+    }
+
+    
+.btn-primary {
+  background: #0891b2;
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 99px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background .3s, transform .3s;
+}
+
+.btn-primary:hover {
+  background: #0e7490;
+  transform: scale(1.05);
+}
+
+    footer {
+      text-align: center;
+      color: #94a3b8;
+      margin-top: 3rem;
+    }
+
+  </style>
+</head>
+<body>
+
+    <form action="submit_feedback.php" method="post">
+
+      
+ 
+ 
+       <div class="container">
+   
+      <h1>Feedback Form</h1>
+      <p>We value your feedback! Rate your experience and share your thoughts.</p>
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Your name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Your email" required>
+
+      <label for="feedback">Feedback</label>
+      <textarea id="feedback" name="feedback" rows="5" placeholder="Your feedback" required></textarea>
+
+      <label>Rating:</label>
+      <div class="stars">
+        <input type="radio" id="star5" name="rating" value="5"><label for="star5">&#9733;</label>
+        <input type="radio" id="star4" name="rating" value="4"><label for="star4">&#9733;</label>
+        <input type="radio" id="star3" name="rating" value="3"><label for="star3">&#9733;</label>
+        <input type="radio" id="star2" name="rating" value="2"><label for="star2">&#9733;</label>
+        <input type="radio" id="star1" name="rating" value="1"><label for="star1">&#9733;</label>
+      </div>
+
+      <button type="submit">Submit Feedback</button>
+    </form>
+
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Game Fusion. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
